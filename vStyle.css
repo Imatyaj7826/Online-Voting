@@ -1,0 +1,48 @@
+.body{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(252, 162, 214);
+    height: 300px;
+  
+}
+.img{
+    padding-top: 20px;
+}
+.img2{
+    padding-top: 15px;
+}
+#cng{
+    margin-left: 40px;
+}
+#sp{
+    margin-left: 22px;
+}
+#bsp{
+    margin-left: 17px;
+}
+.vote-box{
+    background-color: rgb(238, 243, 241);
+    margin-left: 23px;
+    width: 90px;
+    height: 30px;
+}
+.result{
+    margin-top: 70px;
+    width: 90px;
+    height: 15px;
+}
+
+#Vresult{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(252, 162, 214);
+    margin-left: -60px;
+    font-size: 20px;
+    
+}
+#Vresult:hover{
+    background-color: rgb(12, 226, 58);
+}
+.vote-box:hover{
+    background-color: rgb(252, 9, 21);
+}
