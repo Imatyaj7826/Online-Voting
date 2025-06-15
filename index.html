@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>ACME Services</h2>
+      <div class="profile">
+       
+        <p>Julian Westley<br><small><a href="#">Open Profile</a></small></p>
+      </div>
+      <ul>
+        <li>Dashboard</li>
+        <li>Notifications</li>
+        <li>Employees</li>
+        <li>Charts</li>
+        <li>Graphs</li>
+        <li>Help</li>
+        <li>Support</li>
+        <li>Settings</li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <nav>
+          <a href="#">Calendar</a>
+          <a href="#" class="active">Statistics</a>
+          <a href="#">Employees</a>
+        </nav>
+        <div class="controls">
+          <button>Help Bot</button>
+          <button class="bell">🔔</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="user-info">
+          <h3>Julian Westley</h3>
+          <p>Your last login was: 12 seconds ago</p>
+        </div>
+
+        <div class="stats">
+          <div class="card">
+            <h4>Session by Channel</h4>
+            <canvas id="channelPieChart"></canvas>
+          </div>
+          <div class="card">
+            <h4>Events</h4>
+            <canvas id="eventLineChart"></canvas>
+          </div>
+          <div class="card">
+            <h4>Device Stats</h4>
+            <canvas id="deviceBarChart"></canvas>
+          </div>
+        </div>
+
+        <div class="footer-stats">
+          <div class="card">
+            <h4>Sale Analytics</h4>
+            <p>Online: <b>22,370</b><br>Offline: <b>2,456</b><br>On Leave: <b>114</b></p>
+          </div>
+          <div class="card">
+            <h4>Card Title</h4>
+            <p>Total Customers: <b>22,470</b><br>Total Revenue: <b>$1.3M</b></p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Chart.js Configuration -->
+  <script>
+    // Pie Chart
+    const ctxPie = document.getElementById('channelPieChart').getContext('2d');
+    new Chart(ctxPie, {
+      type: 'pie',
+      data: {
+        labels: ['Social', 'Email', 'Direct', 'Organic'],
+        datasets: [{
+          data: [30, 25, 20, 25],
+          backgroundColor: ['#4a4aff', '#74c0fc', '#f59f00', '#37b24d'],
+        }]
+      }
+    });
+
+    // Line Chart
+    const ctxLine = document.getElementById('eventLineChart').getContext('2d');
+    new Chart(ctxLine, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        datasets: [{
+          label: 'Events',
+          data: [12, 19, 14, 22, 17],
+          fill: false,
+          borderColor: '#4a4aff',
+          tension: 0.1
+        }]
+      }
+    });
+
+    // Bar Chart
+    const ctxBar = document.getElementById('deviceBarChart').getContext('2d');
+    new Chart(ctxBar, {
+      type: 'bar',
+      data: {
+        labels: ['CPU', 'Memory', 'Storage', 'Network'],
+        datasets: [{
+          label: 'Usage (%)',
+          data: [65, 59, 80, 81],
+          backgroundColor: '#4a4aff'
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
